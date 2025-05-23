@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 2 | Clue Revealed</title>
+  <link rel="stylesheet" href="image.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+    rel="stylesheet"
+  />
+  <script src="image.js" defer></script>
+</head>
+<body>
+  <div id="container">
+    <img src="./image.png" alt="Clue Image" id="clueImage" />
+    
+    <!-- Overlay buttons -->
+    <button class="overlay-btn" id="group1Btn" title="Your Clue"></button>
+    <button class="overlay-btn" id="group2Btn" title="Your Clue"></button>
+    <button class="overlay-btn" id="group3Btn" title="Your Clue"></button>
+    <button class="overlay-btn" id="group4Btn" title="Your Clue"></button>
+    <button class="overlay-btn" id="group5Btn" title="Your Clue"></button>
+    <button class="overlay-btn" id="group6Btn" title="Your Clue"></button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const group = params.get('group');
+
+    for (let i = 1; i <= 6; i++) {
+      const btn = document.getElementById(`group${i}Btn`);
+      btn.style.display = (group == i.toString()) ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
